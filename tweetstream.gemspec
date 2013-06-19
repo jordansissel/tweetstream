@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'tweetstream/version'
 
 Gem::Specification.new do |spec|
-  spec.name        = 'tweetstream'
+  spec.name        = 'jls-tweetstream'
   spec.version     = TweetStream::VERSION
 
   spec.authors     = ['Michael Bleigh', 'Steve Agalloco']
@@ -18,7 +18,6 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'em-twitter', '~> 0.2'
   spec.add_dependency 'em-http-request', '~> 1.0.2'
   spec.add_dependency 'twitter', '~> 4.5'
-  spec.add_dependency 'yajl-ruby', '~> 1.1'
   spec.add_development_dependency 'bundler', '~> 1.0'
 
   spec.files = %w(.yardopts CHANGELOG.md CONTRIBUTING.md LICENSE.md README.md Rakefile tweetstream.gemspec)
