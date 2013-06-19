@@ -1,7 +1,18 @@
 require 'em-twitter'
 require 'eventmachine'
 require 'twitter'
-require 'yajl'
+begin
+  require 'yajl'
+rescue LoadError
+  require 'json'
+  module Yajl
+    module Parser
+      def parse(text, opts=nil)
+        JSON.parse(text, opts)
+      end
+    end
+  end
+end
 
 module TweetStream
   # Provides simple access to the Twitter Streaming API (https://dev.twitter.com/docs/streaming-api)
